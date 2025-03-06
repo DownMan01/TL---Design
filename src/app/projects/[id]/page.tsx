@@ -94,245 +94,251 @@ export default function ProjectDetails({ params }: ProjectParams) {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          <div className="lg:col-span-2">
-            <div className="mb-8 overflow-hidden rounded-xl">
+        <div className="max-w-4xl mx-auto">
+          {/* Hero section with banner image and profile */}
+          <div className="mb-8 bg-card rounded-xl border border-border overflow-hidden shadow-md">
+            {/* Banner image */}
+            <div className="relative">
               <Image
                 src={project.image}
                 alt={project.name}
                 width={1200}
-                height={600}
-                className="w-full object-cover h-[400px]"
+                height={400}
+                className="w-full object-cover h-[250px]"
               />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/70"></div>
             </div>
 
-            <div className="mb-6 flex items-center gap-4">
-              <div
-                className={`flex h-16 w-16 items-center justify-center rounded-full bg-${project.logoColor}-100 dark:bg-${project.logoColor}-900`}
-              >
-                <span
-                  className={`text-${project.logoColor}-600 dark:text-${project.logoColor}-300 text-2xl`}
+            {/* Profile section with avatar overlapping the banner */}
+            <div className="relative px-6 pb-6">
+              <div className="flex flex-col sm:flex-row sm:items-end gap-4 -mt-12 mb-6">
+                <div
+                  className={`flex h-24 w-24 items-center justify-center rounded-full bg-${project.logoColor}-100 dark:bg-${project.logoColor}-900 shadow-lg border-4 border-card`}
                 >
-                  {project.logo}
-                </span>
+                  <span
+                    className={`text-${project.logoColor}-600 dark:text-${project.logoColor}-300 text-4xl`}
+                  >
+                    {project.logo}
+                  </span>
+                </div>
+                <div className="flex-1">
+                  <h1 className="text-3xl font-bold">{project.name}</h1>
+                  <p className="text-muted-foreground">{project.description}</p>
+                </div>
+                <Button className="w-full sm:w-auto bg-primary hover:bg-primary/90 transition-colors shadow-md">
+                  Register for Airdrop
+                </Button>
               </div>
-              <div>
-                <h1 className="text-3xl font-bold">{project.name}</h1>
-                <p className="text-muted-foreground">{project.description}</p>
+
+              {/* Project description */}
+              <div className="mb-6">
+                <p className="text-muted-foreground">
+                  {project.longDescription}
+                </p>
               </div>
-            </div>
 
-            <div className="mb-8">
-              <h2 className="mb-4 text-2xl font-semibold">About</h2>
-              <p className="text-muted-foreground">{project.longDescription}</p>
-            </div>
-
-            <div className="mb-8">
-              <h2 className="mb-4 text-2xl font-semibold">
-                How to Participate
-              </h2>
-              <div className="space-y-6">
-                <div className="rounded-lg border border-border bg-card p-6">
-                  <h3 className="text-lg font-medium mb-3">
-                    Step 1: Create an Account
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Register on the official {project.name} website and complete
-                    the KYC verification process to ensure eligibility for the
-                    airdrop.
-                  </p>
-                </div>
-
-                <div className="rounded-lg border border-border bg-card p-6">
-                  <h3 className="text-lg font-medium mb-3">
-                    Step 2: Connect Your Wallet
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Link your compatible crypto wallet to your account. Make
-                    sure your wallet supports the {project.chain} network.
-                  </p>
-                </div>
-
-                <div className="rounded-lg border border-border bg-card p-6">
-                  <h3 className="text-lg font-medium mb-3">
-                    Step 3: Complete Tasks
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Participate in the testnet, engage with the community, and
-                    complete all required tasks to maximize your airdrop
-                    allocation.
-                  </p>
-                </div>
-
-                <div className="rounded-lg border border-border bg-card p-6">
-                  <h3 className="text-lg font-medium mb-3">
-                    Step 4: Claim Your Tokens
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Once the airdrop is live, return to the platform to claim
-                    your tokens. Make sure to follow the official announcements
-                    for the exact claim date.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mb-8">
-              <h2 className="mb-4 text-2xl font-semibold">Timeline</h2>
-              <div className="relative border-l border-border pl-6">
-                {project.timeline.map((item, index) => (
-                  <div key={index} className="mb-6 last:mb-0">
-                    <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-border bg-background"></div>
-                    <div className="text-sm text-muted-foreground">
-                      {item.date}
-                    </div>
-                    <div className="mt-1 font-medium">{item.event}</div>
+              {/* Airdrop stats in card grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+                <div className="rounded-lg border border-border bg-card/50 p-4 hover:shadow-sm transition-shadow">
+                  <div className="flex items-center mb-2">
+                    <Globe className="mr-2 h-4 w-4 text-primary" />
+                    <div className="text-sm font-medium">Chain</div>
                   </div>
-                ))}
-              </div>
-            </div>
+                  <div className="font-medium">{project.chain}</div>
+                </div>
 
-            <div className="mb-8">
-              <h2 className="mb-4 text-2xl font-semibold">
-                Airdrop Requirements
-              </h2>
-              <ul className="space-y-2">
-                {project.requirements.map((req, index) => (
-                  <li key={index} className="flex items-start">
-                    <div className="mr-2 mt-1 h-1.5 w-1.5 rounded-full bg-primary"></div>
-                    <span>{req}</span>
-                  </li>
-                ))}
-              </ul>
+                <div className="rounded-lg border border-border bg-card/50 p-4 hover:shadow-sm transition-shadow">
+                  <div className="flex items-center mb-2">
+                    <DollarSign className="mr-2 h-4 w-4 text-primary" />
+                    <div className="text-sm font-medium">Cost</div>
+                  </div>
+                  <div className="font-medium">{project.cost}</div>
+                </div>
+
+                <div className="rounded-lg border border-border bg-card/50 p-4 hover:shadow-sm transition-shadow">
+                  <div className="flex items-center mb-2">
+                    <Award className="mr-2 h-4 w-4 text-primary" />
+                    <div className="text-sm font-medium">Difficulty</div>
+                  </div>
+                  <div className="font-medium">{project.difficulty}</div>
+                </div>
+
+                <div className="rounded-lg border border-border bg-card/50 p-4 hover:shadow-sm transition-shadow">
+                  <div className="flex items-center mb-2">
+                    <DollarSign className="mr-2 h-4 w-4 text-primary" />
+                    <div className="text-sm font-medium">Est. Reward</div>
+                  </div>
+                  <div className="font-medium">{project.estimatedReward}</div>
+                </div>
+
+                <div className="rounded-lg border border-border bg-card/50 p-4 hover:shadow-sm transition-shadow">
+                  <div className="flex items-center mb-2">
+                    <Calendar className="mr-2 h-4 w-4 text-primary" />
+                    <div className="text-sm font-medium">End Date</div>
+                  </div>
+                  <div className="font-medium">{project.endDate}</div>
+                </div>
+
+                <div className="rounded-lg border border-border bg-card/50 p-4 hover:shadow-sm transition-shadow">
+                  <div className="flex items-center mb-2">
+                    <Users className="mr-2 h-4 w-4 text-primary" />
+                    <div className="text-sm font-medium">Participants</div>
+                  </div>
+                  <div className="font-medium">{project.participants}</div>
+                </div>
+
+                <div className="rounded-lg border border-border bg-card/50 p-4 hover:shadow-sm transition-shadow">
+                  <div className="flex items-center mb-2">
+                    <Clock className="mr-2 h-4 w-4 text-primary" />
+                    <div className="text-sm font-medium">Stage</div>
+                  </div>
+                  <div>
+                    <span className="rounded-full bg-blue-100 px-2 py-0.5 text-xs text-blue-800 dark:bg-blue-900 dark:text-blue-300">
+                      {project.stage}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="rounded-lg border border-border bg-card/50 p-4 hover:shadow-sm transition-shadow">
+                  <div className="flex items-center mb-2">
+                    <Globe className="mr-2 h-4 w-4 text-primary" />
+                    <div className="text-sm font-medium">Links</div>
+                  </div>
+                  <div className="flex gap-3">
+                    <a
+                      href={project.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <Globe className="h-5 w-5" />
+                    </a>
+                    <a
+                      href={project.twitter}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <Twitter className="h-5 w-5" />
+                    </a>
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <Github className="h-5 w-5" />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div>
-            <div className="sticky top-24">
-              <div className="mb-6 rounded-xl border border-border bg-card p-6">
-                <h2 className="mb-4 text-xl font-semibold">Airdrop Details</h2>
+          {/* Combined How to Participate & Requirements section */}
+          <div className="mb-8 bg-card rounded-xl border border-border p-6 shadow-md">
+            <div className="flex items-center mb-6">
+              <h2 className="text-2xl font-semibold">How to Participate</h2>
+              <div className="ml-auto flex items-center gap-2">
+                <span className="text-sm text-muted-foreground">Share:</span>
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Twitter className="h-4 w-4" />
+                </a>
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Globe className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
 
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center text-muted-foreground">
-                      <Globe className="mr-2 h-4 w-4" />
-                      Chain
-                    </div>
-                    <div>
-                      <span
-                        className={`rounded-full bg-${project.logoColor}-100 px-2 py-1 text-xs text-${project.logoColor}-800 dark:bg-${project.logoColor}-900 dark:text-${project.logoColor}-300`}
-                      >
-                        {project.chain}
-                      </span>
-                    </div>
+            {/* Steps to participate */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div className="rounded-lg border border-border bg-card/50 p-6 hover:shadow-sm transition-shadow">
+                <div className="flex items-center mb-3">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 mr-3">
+                    <span className="font-bold">1</span>
                   </div>
-
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center text-muted-foreground">
-                      <DollarSign className="mr-2 h-4 w-4" />
-                      Cost
-                    </div>
-                    <div>
-                      <span className="rounded-full bg-green-100 px-2 py-1 text-xs text-green-800 dark:bg-green-900 dark:text-green-300">
-                        {project.cost}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center text-muted-foreground">
-                      <Award className="mr-2 h-4 w-4" />
-                      Difficulty
-                    </div>
-                    <div className="text-sm">{project.difficulty}</div>
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center text-muted-foreground">
-                      <DollarSign className="mr-2 h-4 w-4" />
-                      Est. Reward
-                    </div>
-                    <div className="text-sm">{project.estimatedReward}</div>
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center text-muted-foreground">
-                      <Calendar className="mr-2 h-4 w-4" />
-                      End Date
-                    </div>
-                    <div className="text-sm">{project.endDate}</div>
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center text-muted-foreground">
-                      <Users className="mr-2 h-4 w-4" />
-                      Participants
-                    </div>
-                    <div className="text-sm">{project.participants}</div>
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center text-muted-foreground">
-                      <Clock className="mr-2 h-4 w-4" />
-                      Stage
-                    </div>
-                    <div>
-                      <span className="rounded-full bg-blue-100 px-2 py-1 text-xs text-blue-800 dark:bg-blue-900 dark:text-blue-300">
-                        {project.stage}
-                      </span>
-                    </div>
-                  </div>
+                  <h3 className="text-lg font-medium">Create an Account</h3>
                 </div>
-
-                <div className="mt-6 border-t border-border pt-6">
-                  <Button className="w-full">Register for Airdrop</Button>
-                </div>
+                <p className="text-muted-foreground">
+                  Register on the official {project.name} website and complete
+                  the KYC verification process to ensure eligibility for the
+                  airdrop.
+                </p>
               </div>
 
-              <div className="rounded-xl border border-border bg-card p-6">
-                <h2 className="mb-4 text-xl font-semibold">Links</h2>
-
-                <div className="space-y-3">
-                  <a
-                    href={project.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    <div className="flex items-center">
-                      <Globe className="mr-2 h-4 w-4" />
-                      Website
-                    </div>
-                    <ExternalLink className="h-4 w-4" />
-                  </a>
-
-                  <a
-                    href={project.twitter}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    <div className="flex items-center">
-                      <Twitter className="mr-2 h-4 w-4" />
-                      Twitter
-                    </div>
-                    <ExternalLink className="h-4 w-4" />
-                  </a>
-
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    <div className="flex items-center">
-                      <Github className="mr-2 h-4 w-4" />
-                      GitHub
-                    </div>
-                    <ExternalLink className="h-4 w-4" />
-                  </a>
+              <div className="rounded-lg border border-border bg-card/50 p-6 hover:shadow-sm transition-shadow">
+                <div className="flex items-center mb-3">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 mr-3">
+                    <span className="font-bold">2</span>
+                  </div>
+                  <h3 className="text-lg font-medium">Connect Your Wallet</h3>
                 </div>
+                <p className="text-muted-foreground">
+                  Link your compatible crypto wallet to your account. Make sure
+                  your wallet supports the {project.chain} network.
+                </p>
               </div>
+
+              <div className="rounded-lg border border-border bg-card/50 p-6 hover:shadow-sm transition-shadow">
+                <div className="flex items-center mb-3">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 mr-3">
+                    <span className="font-bold">3</span>
+                  </div>
+                  <h3 className="text-lg font-medium">Complete Tasks</h3>
+                </div>
+                <p className="text-muted-foreground">
+                  Participate in the testnet, engage with the community, and
+                  complete all required tasks to maximize your airdrop
+                  allocation.
+                </p>
+              </div>
+
+              <div className="rounded-lg border border-border bg-card/50 p-6 hover:shadow-sm transition-shadow">
+                <div className="flex items-center mb-3">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 mr-3">
+                    <span className="font-bold">4</span>
+                  </div>
+                  <h3 className="text-lg font-medium">Claim Your Tokens</h3>
+                </div>
+                <p className="text-muted-foreground">
+                  Once the airdrop is live, return to the platform to claim your
+                  tokens. Make sure to follow the official announcements for the
+                  exact claim date.
+                </p>
+              </div>
+            </div>
+
+            {/* Requirements section */}
+            <div className="w-full h-px bg-border my-6"></div>
+            <h3 className="text-xl font-semibold mb-4">Requirements</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {project.requirements.map((req, index) => (
+                <div
+                  key={index}
+                  className="flex items-center p-4 rounded-lg border border-border bg-card/50 hover:shadow-sm transition-shadow"
+                >
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 mr-3">
+                    <span className="text-primary">{index + 1}</span>
+                  </div>
+                  <span>{req}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA button */}
+            <div className="mt-8 text-center">
+              <Button className="px-8 py-6 h-auto text-lg bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary shadow-md hover:shadow-lg transition-all">
+                Register for Airdrop
+              </Button>
+              <p className="text-sm text-muted-foreground mt-2">
+                Join {project.participants} participants already registered
+              </p>
             </div>
           </div>
         </div>
