@@ -72,7 +72,7 @@ export default function Home() {
                 <th className="py-4 pr-4 font-medium">Chain</th>
                 <th className="py-4 pr-4 font-medium">Cost</th>
                 <th className="py-4 pr-4 font-medium">Backers</th>
-                <th className="py-4 font-medium">Stage</th>
+                <th className="py-4 pr-4 font-medium">Stage</th>
               </tr>
             </thead>
             <tbody>
@@ -148,8 +148,459 @@ export default function Home() {
                   </span>
                 </td>
               </tr>
+              <tr className="border-b border-border hover:bg-muted/50 cursor-pointer transition-colors">
+                <td className="py-4 pr-4">
+                  <Link
+                    href="/projects/celestia"
+                    className="flex items-center gap-3"
+                  >
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900">
+                      <span className="text-blue-600 dark:text-blue-300">
+                        🌌
+                      </span>
+                    </div>
+                    <span className="font-medium">Celestia</span>
+                  </Link>
+                </td>
+                <td className="py-4 pr-4 text-muted-foreground">
+                  Modular blockchain network
+                </td>
+                <td className="py-4 pr-4">
+                  <span className="rounded-full bg-blue-100 px-2 py-1 text-xs text-blue-800 dark:bg-blue-900 dark:text-blue-300">
+                    Celestia
+                  </span>
+                </td>
+                <td className="py-4 pr-4">
+                  <span className="rounded-full bg-green-100 px-2 py-1 text-xs text-green-800 dark:bg-green-900 dark:text-green-300">
+                    FREE
+                  </span>
+                </td>
+                <td className="py-4 pr-4 text-muted-foreground">
+                  Bain Capital, Polychain, etc.
+                </td>
+                <td className="py-4">
+                  <span className="rounded-full bg-blue-100 px-2 py-1 text-xs text-blue-800 dark:bg-blue-900 dark:text-blue-300">
+                    Active
+                  </span>
+                </td>
+              </tr>
+              <tr className="border-b border-border hover:bg-muted/50 cursor-pointer transition-colors">
+                <td className="py-4 pr-4">
+                  <Link
+                    href="/projects/sui"
+                    className="flex items-center gap-3"
+                  >
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-100 dark:bg-cyan-900">
+                      <span className="text-cyan-600 dark:text-cyan-300">
+                        🌊
+                      </span>
+                    </div>
+                    <span className="font-medium">Sui Network</span>
+                  </Link>
+                </td>
+                <td className="py-4 pr-4 text-muted-foreground">
+                  Layer 1 with horizontal scaling
+                </td>
+                <td className="py-4 pr-4">
+                  <span className="rounded-full bg-cyan-100 px-2 py-1 text-xs text-cyan-800 dark:bg-cyan-900 dark:text-cyan-300">
+                    Sui
+                  </span>
+                </td>
+                <td className="py-4 pr-4">
+                  <span className="rounded-full bg-green-100 px-2 py-1 text-xs text-green-800 dark:bg-green-900 dark:text-green-300">
+                    FREE
+                  </span>
+                </td>
+                <td className="py-4 pr-4 text-muted-foreground">
+                  a16z, Coinbase Ventures, etc.
+                </td>
+                <td className="py-4">
+                  <span className="rounded-full bg-blue-100 px-2 py-1 text-xs text-blue-800 dark:bg-blue-900 dark:text-blue-300">
+                    Active
+                  </span>
+                </td>
+              </tr>
+              <tr className="border-b border-border hover:bg-muted/50 cursor-pointer transition-colors">
+                <td className="py-4 pr-4">
+                  <Link
+                    href="/projects/arbitrum"
+                    className="flex items-center gap-3"
+                  >
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-100 dark:bg-indigo-900">
+                      <span className="text-indigo-600 dark:text-indigo-300">
+                        ⚖️
+                      </span>
+                    </div>
+                    <span className="font-medium">Arbitrum Nova</span>
+                  </Link>
+                </td>
+                <td className="py-4 pr-4 text-muted-foreground">
+                  Ethereum L2 scaling solution
+                </td>
+                <td className="py-4 pr-4">
+                  <span className="rounded-full bg-indigo-100 px-2 py-1 text-xs text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300">
+                    Ethereum
+                  </span>
+                </td>
+                <td className="py-4 pr-4">
+                  <span className="rounded-full bg-yellow-100 px-2 py-1 text-xs text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300">
+                    PAID
+                  </span>
+                </td>
+                <td className="py-4 pr-4 text-muted-foreground">
+                  Offchain Labs, Consensys, etc.
+                </td>
+                <td className="py-4">
+                  <span className="rounded-full bg-yellow-100 px-2 py-1 text-xs text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300">
+                    Upcoming
+                  </span>
+                </td>
+              </tr>
+              <tr className="border-b border-border hover:bg-muted/50 cursor-pointer transition-colors">
+                <td className="py-4 pr-4">
+                  <Link
+                    href="/projects/starknet"
+                    className="flex items-center gap-3"
+                  >
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
+                      <span className="text-gray-600 dark:text-gray-300">
+                        ⭐
+                      </span>
+                    </div>
+                    <span className="font-medium">StarkNet</span>
+                  </Link>
+                </td>
+                <td className="py-4 pr-4 text-muted-foreground">
+                  ZK rollup for Ethereum
+                </td>
+                <td className="py-4 pr-4">
+                  <span className="rounded-full bg-indigo-100 px-2 py-1 text-xs text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300">
+                    Ethereum
+                  </span>
+                </td>
+                <td className="py-4 pr-4">
+                  <span className="rounded-full bg-green-100 px-2 py-1 text-xs text-green-800 dark:bg-green-900 dark:text-green-300">
+                    FREE
+                  </span>
+                </td>
+                <td className="py-4 pr-4 text-muted-foreground">
+                  Paradigm, Sequoia Capital, etc.
+                </td>
+                <td className="py-4">
+                  <span className="rounded-full bg-blue-100 px-2 py-1 text-xs text-blue-800 dark:bg-blue-900 dark:text-blue-300">
+                    Active
+                  </span>
+                </td>
+              </tr>
+              <tr className="border-b border-border hover:bg-muted/50 cursor-pointer transition-colors">
+                <td className="py-4 pr-4">
+                  <Link
+                    href="/projects/zksync"
+                    className="flex items-center gap-3"
+                  >
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-pink-100 dark:bg-pink-900">
+                      <span className="text-pink-600 dark:text-pink-300">
+                        🔐
+                      </span>
+                    </div>
+                    <span className="font-medium">zkSync Era</span>
+                  </Link>
+                </td>
+                <td className="py-4 pr-4 text-muted-foreground">
+                  ZK rollup scaling solution
+                </td>
+                <td className="py-4 pr-4">
+                  <span className="rounded-full bg-indigo-100 px-2 py-1 text-xs text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300">
+                    Ethereum
+                  </span>
+                </td>
+                <td className="py-4 pr-4">
+                  <span className="rounded-full bg-green-100 px-2 py-1 text-xs text-green-800 dark:bg-green-900 dark:text-green-300">
+                    FREE
+                  </span>
+                </td>
+                <td className="py-4 pr-4 text-muted-foreground">
+                  a16z, BitMEX, Binance, etc.
+                </td>
+                <td className="py-4">
+                  <span className="rounded-full bg-blue-100 px-2 py-1 text-xs text-blue-800 dark:bg-blue-900 dark:text-blue-300">
+                    Active
+                  </span>
+                </td>
+              </tr>
+              <tr className="border-b border-border hover:bg-muted/50 cursor-pointer transition-colors">
+                <td className="py-4 pr-4">
+                  <Link
+                    href="/projects/linea"
+                    className="flex items-center gap-3"
+                  >
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900">
+                      <span className="text-blue-600 dark:text-blue-300">
+                        📈
+                      </span>
+                    </div>
+                    <span className="font-medium">Linea</span>
+                  </Link>
+                </td>
+                <td className="py-4 pr-4 text-muted-foreground">
+                  Consensys ZK rollup
+                </td>
+                <td className="py-4 pr-4">
+                  <span className="rounded-full bg-indigo-100 px-2 py-1 text-xs text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300">
+                    Ethereum
+                  </span>
+                </td>
+                <td className="py-4 pr-4">
+                  <span className="rounded-full bg-green-100 px-2 py-1 text-xs text-green-800 dark:bg-green-900 dark:text-green-300">
+                    FREE
+                  </span>
+                </td>
+                <td className="py-4 pr-4 text-muted-foreground">
+                  Consensys, MetaMask, etc.
+                </td>
+                <td className="py-4">
+                  <span className="rounded-full bg-blue-100 px-2 py-1 text-xs text-blue-800 dark:bg-blue-900 dark:text-blue-300">
+                    Active
+                  </span>
+                </td>
+              </tr>
+              <tr className="border-b border-border hover:bg-muted/50 cursor-pointer transition-colors">
+                <td className="py-4 pr-4">
+                  <Link
+                    href="/projects/base"
+                    className="flex items-center gap-3"
+                  >
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900">
+                      <span className="text-blue-600 dark:text-blue-300">
+                        🔷
+                      </span>
+                    </div>
+                    <span className="font-medium">Base</span>
+                  </Link>
+                </td>
+                <td className="py-4 pr-4 text-muted-foreground">
+                  Coinbase L2 solution
+                </td>
+                <td className="py-4 pr-4">
+                  <span className="rounded-full bg-indigo-100 px-2 py-1 text-xs text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300">
+                    Ethereum
+                  </span>
+                </td>
+                <td className="py-4 pr-4">
+                  <span className="rounded-full bg-green-100 px-2 py-1 text-xs text-green-800 dark:bg-green-900 dark:text-green-300">
+                    FREE
+                  </span>
+                </td>
+                <td className="py-4 pr-4 text-muted-foreground">
+                  Coinbase, Optimism, etc.
+                </td>
+                <td className="py-4">
+                  <span className="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-800 dark:bg-gray-800 dark:text-gray-300">
+                    Ended
+                  </span>
+                </td>
+              </tr>
+              <tr className="border-b border-border hover:bg-muted/50 cursor-pointer transition-colors">
+                <td className="py-4 pr-4">
+                  <Link
+                    href="/projects/scroll"
+                    className="flex items-center gap-3"
+                  >
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-900">
+                      <span className="text-amber-600 dark:text-amber-300">
+                        📜
+                      </span>
+                    </div>
+                    <span className="font-medium">Scroll</span>
+                  </Link>
+                </td>
+                <td className="py-4 pr-4 text-muted-foreground">
+                  EVM-compatible ZK rollup
+                </td>
+                <td className="py-4 pr-4">
+                  <span className="rounded-full bg-indigo-100 px-2 py-1 text-xs text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300">
+                    Ethereum
+                  </span>
+                </td>
+                <td className="py-4 pr-4">
+                  <span className="rounded-full bg-green-100 px-2 py-1 text-xs text-green-800 dark:bg-green-900 dark:text-green-300">
+                    FREE
+                  </span>
+                </td>
+                <td className="py-4 pr-4 text-muted-foreground">
+                  Polychain, Sequoia, Bain Capital, etc.
+                </td>
+                <td className="py-4">
+                  <span className="rounded-full bg-yellow-100 px-2 py-1 text-xs text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300">
+                    Upcoming
+                  </span>
+                </td>
+              </tr>
+              <tr className="border-b border-border hover:bg-muted/50 cursor-pointer transition-colors">
+                <td className="py-4 pr-4">
+                  <Link
+                    href="/projects/taiko"
+                    className="flex items-center gap-3"
+                  >
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100 dark:bg-red-900">
+                      <span className="text-red-600 dark:text-red-300">🥁</span>
+                    </div>
+                    <span className="font-medium">Taiko</span>
+                  </Link>
+                </td>
+                <td className="py-4 pr-4 text-muted-foreground">
+                  Type 1 ZK-EVM rollup
+                </td>
+                <td className="py-4 pr-4">
+                  <span className="rounded-full bg-indigo-100 px-2 py-1 text-xs text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300">
+                    Ethereum
+                  </span>
+                </td>
+                <td className="py-4 pr-4">
+                  <span className="rounded-full bg-green-100 px-2 py-1 text-xs text-green-800 dark:bg-green-900 dark:text-green-300">
+                    FREE
+                  </span>
+                </td>
+                <td className="py-4 pr-4 text-muted-foreground">
+                  IOSG Ventures, Coinbase Ventures, etc.
+                </td>
+                <td className="py-4">
+                  <span className="rounded-full bg-blue-100 px-2 py-1 text-xs text-blue-800 dark:bg-blue-900 dark:text-blue-300">
+                    Active
+                  </span>
+                </td>
+              </tr>
+              <tr className="border-b border-border hover:bg-muted/50 cursor-pointer transition-colors">
+                <td className="py-4 pr-4">
+                  <Link
+                    href="/projects/mantle"
+                    className="flex items-center gap-3"
+                  >
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900">
+                      <span className="text-orange-600 dark:text-orange-300">
+                        🔥
+                      </span>
+                    </div>
+                    <span className="font-medium">Mantle</span>
+                  </Link>
+                </td>
+                <td className="py-4 pr-4 text-muted-foreground">
+                  Modular Ethereum L2 solution
+                </td>
+                <td className="py-4 pr-4">
+                  <span className="rounded-full bg-indigo-100 px-2 py-1 text-xs text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300">
+                    Ethereum
+                  </span>
+                </td>
+                <td className="py-4 pr-4">
+                  <span className="rounded-full bg-green-100 px-2 py-1 text-xs text-green-800 dark:bg-green-900 dark:text-green-300">
+                    FREE
+                  </span>
+                </td>
+                <td className="py-4 pr-4 text-muted-foreground">
+                  BitDAO, Pantera Capital, etc.
+                </td>
+                <td className="py-4">
+                  <span className="rounded-full bg-blue-100 px-2 py-1 text-xs text-blue-800 dark:bg-blue-900 dark:text-blue-300">
+                    Active
+                  </span>
+                </td>
+              </tr>
             </tbody>
           </table>
+        </div>
+
+        {/* Pagination */}
+        <div className="mt-8 flex items-center justify-center gap-2">
+          <button className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-input bg-background text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground">
+            <span className="sr-only">Go to first page</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-4 w-4"
+            >
+              <polyline points="11 17 6 12 11 7"></polyline>
+              <polyline points="18 17 13 12 18 7"></polyline>
+            </svg>
+          </button>
+          <button className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-input bg-background text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground">
+            <span className="sr-only">Go to previous page</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-4 w-4"
+            >
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button className="inline-flex h-9 min-w-9 items-center justify-center rounded-md border border-input bg-primary text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90">
+            1
+          </button>
+          <button className="inline-flex h-9 min-w-9 items-center justify-center rounded-md border border-input bg-background text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground">
+            2
+          </button>
+          <button className="inline-flex h-9 min-w-9 items-center justify-center rounded-md border border-input bg-background text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground">
+            3
+          </button>
+          <span className="mx-1 text-sm text-muted-foreground">...</span>
+          <button className="inline-flex h-9 min-w-9 items-center justify-center rounded-md border border-input bg-background text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground">
+            8
+          </button>
+          <button className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-input bg-background text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground">
+            <span className="sr-only">Go to next page</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-4 w-4"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+          <button className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-input bg-background text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground">
+            <span className="sr-only">Go to last page</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-4 w-4"
+            >
+              <polyline points="13 17 18 12 13 7"></polyline>
+              <polyline points="6 17 11 12 6 7"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <div className="mt-4 text-center text-sm text-muted-foreground">
+          Showing <span className="font-medium">1</span> to{" "}
+          <span className="font-medium">12</span> of{" "}
+          <span className="font-medium">48</span> projects
         </div>
       </main>
 
